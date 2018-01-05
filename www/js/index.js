@@ -20,6 +20,12 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+
+        codePush.sync(function(status){
+		alert("status = " + status);
+	}, null, function(progress){
+		alert("progress = " + progress);
+	});
     },
 
     // deviceready Event Handler
