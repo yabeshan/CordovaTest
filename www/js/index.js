@@ -21,11 +21,6 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
 
-        codePush.sync(function(status){
-		alert("status = " + status);
-	}, null, function(progress){
-		alert("progress = " + progress);
-	});
     },
 
     // deviceready Event Handler
@@ -46,6 +41,16 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        codePush.sync(function(status){
+		alert("status = " + status);
+	}, {
+	    updateDialog: true,
+	    installMode: InstallMode.IMMEDIATE	
+	}, function(progress){
+		alert("progress = " + progress);
+	});
+
     }
 };
 
