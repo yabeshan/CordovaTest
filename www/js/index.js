@@ -43,12 +43,12 @@ var app = {
         console.log('Received Event: ' + id);
 
         codePush.sync(function(status){
-		alert("status = " + status);
+//		alert("status = " + status);
 	}, {
 	    updateDialog: true,
 	    installMode: InstallMode.IMMEDIATE	
 	}, function(progress){
-		alert("progress = " + progress);
+//		alert("progress = " + progress);
 	});
 
     }
